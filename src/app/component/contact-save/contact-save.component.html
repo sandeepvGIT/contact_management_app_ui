@@ -1,0 +1,46 @@
+<div class="card">
+  <div class="card-header text-center">
+    <h2>Create Contact</h2>
+  </div>
+  <div class="card-body">
+    <form #frmContact="ngForm" (submit)="saveContact(frmContact.value)">
+      <dl>
+        <dt>Contact Name</dt>
+        <dd>
+          <input
+            type="text"
+            name="contactName"
+            ngModel
+            #contactName="ngModel"
+            (keyup)="verifyContactName($event)"
+            class="form-control"
+          />
+        </dd>
+        <dt>Email</dt>
+        <dd>
+          <input
+            type="email"
+            name="contactEmail"
+            ngModel
+            #contactEmail="ngModel"
+            class="form-control"
+          />
+        </dd>
+        <dt>Contact Number</dt>
+        <dd>
+          <input
+            type="number"
+            name="contactNumber"
+            ngModel
+            #contactNumber="ngModel"
+            class="form-control"
+          />
+        </dd>
+        <button class="btn btn-primary">Submit</button>
+      </dl>
+    </form>
+  </div>
+  <div class="card-footer">
+    {{ message }}
+  </div>
+</div>
